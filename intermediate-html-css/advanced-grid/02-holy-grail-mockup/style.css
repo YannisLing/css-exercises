@@ -5,6 +5,9 @@
 
 .container {
   text-align: center;
+  display: grid;
+  grid-template-rows: 15hv 7.5hv 1fr 7.5hv;
+  grid-template-columns: 1fr 4fr;
 }
 
 .container div {
@@ -13,19 +16,41 @@
   font-family: Helvetica;
   font-weight: bold;
   color: white;
+  
 }
 
 .header {
   background-color: #393f4d;
-}
+  grid-column:1/-1 ;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
 
+}
+.header .logo {
+  text-align: left;
+}
+.menu ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1;
+  height: 100%;
+}
 .menu ul,
 .menu li {
   font-size: 16px;
+  list-style: none;
+  display: grid;
+  place-items: center;  /* 水平和垂直同时居中 */
 }
 
 .sidebar {
   background-color: #C50208;
+  grid-column: 1/span 1;
+  grid-row: 2/4;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 50px
 }
 
 .sidebar .photo {
